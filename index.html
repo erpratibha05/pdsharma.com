@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Priyadarshi Sharma & Company | Chartered Accountants</title>
+<title>Priyadarshi Sharma & Company | Chartered Accountants</title>
 
-  <meta name="description" content="Priyadarshi Sharma & Company is a Chartered Accountancy firm providing Income Tax, GST, Audit, Accounting and Compliance services in India.">
-  <meta name="keywords" content="Chartered Accountant, CA Firm, Tax Consultant, GST Services, Accounting Firm, Audit Services">
-  <meta name="author" content="Priyadarshi Sharma & Company">
+<meta name="description" content="Priyadarshi Sharma & Company – Chartered Accountants offering Tax, GST, Audit, Accounting & Compliance services in Bikaner, Rajasthan.">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://pdsharma.com/" />
+<link rel="canonical" href="https://pdsharma.com/" />
 
-  <!-- Open Graph (WhatsApp / LinkedIn) -->
-  <meta property="og:title" content="Priyadarshi Sharma & Company | Chartered Accountants">
-  <meta property="og:description" content="Professional Chartered Accountants offering Tax, GST, Audit & Accounting services.">
-  <meta property="og:url" content="https://pdsharma.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://pdsharma.com/logo.png">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Priyadarshi Sharma & Company",
+  "url": "https://pdsharma.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "9 Modern Market",
+    "addressLocality": "Bikaner",
+    "addressRegion": "Rajasthan",
+    "addressCountry": "IN"
+  }
+}
+</script>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy: #0B2A4A;
@@ -42,63 +45,77 @@
   font-family: 'Poppins', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
+body { background: var(--light); color: #222; }
 
-body {
-  background: var(--light);
-  color: #222;
-}
-
-/* NAVBAR */
-nav {
+/* ---------------- NAVBAR ---------------- */
+.navbar {
   position: sticky;
   top: 0;
-  background: white;
+  background: #fff;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 14px 40px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   z-index: 1000;
 }
 
-nav img {
-  height: 42px;
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-nav a {
+.logo-wrap img {
+  height: 48px;
+}
+
+.logo-wrap span {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.nav-links a {
   margin-left: 25px;
   text-decoration: none;
   color: var(--navy);
   font-weight: 500;
 }
 
-nav a:hover {
-  color: var(--gold);
+.nav-links a:hover { color: var(--gold); }
+
+/* ---------------- HERO ---------------- */
+.hero {
+  background:
+    linear-gradient(120deg, rgba(11,42,74,0.9), rgba(63,111,82,0.9)),
+    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a");
+  background-size: cover;
+  background-position: center;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* HERO */
-.hero {
-  background: linear-gradient(120deg, var(--navy), var(--green));
-  color: white;
-  text-align: center;
-  padding: 120px 20px;
+.hero-overlay {
+  color: #fff;
+  padding: 20px;
+  animation: fadeUp 1.2s ease forwards;
 }
 
 .hero h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hero p {
   font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .hero .cta {
-  margin-top: 30px;
-  display: inline-block;
   background: var(--gold);
   color: #000;
   padding: 14px 36px;
@@ -107,11 +124,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-.hero .cta:hover {
-  background: #b6933f;
-}
-
-/* SECTION */
+/* ---------------- SECTIONS ---------------- */
 section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -125,7 +138,7 @@ section h2 {
   font-size: 2.2rem;
 }
 
-/* ABOUT */
+/* ---------------- ABOUT ---------------- */
 .about-text {
   text-align: center;
   max-width: 900px;
@@ -133,26 +146,41 @@ section h2 {
   margin-bottom: 40px;
 }
 
-.about-cards {
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
 
 .about-card {
-  background: white;
+  position: relative;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.about-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(11,42,74,0.85),
+    rgba(63,111,82,0.85)
+  );
+  color: #fff;
   padding: 25px;
-  border-left: 5px solid var(--gold);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.about-card:hover {
-  transform: translateY(-8px);
-}
-
-/* SERVICES */
+/* ---------------- SERVICES ---------------- */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -160,7 +188,7 @@ section h2 {
 }
 
 .service {
-  background: white;
+  background: #fff;
   padding: 30px 20px;
   border-radius: 14px;
   text-align: center;
@@ -168,18 +196,12 @@ section h2 {
   transition: transform 0.3s;
 }
 
-.service:hover {
-  transform: translateY(-10px);
-}
+.service:hover { transform: translateY(-8px); }
+.service h3 { color: var(--green); }
 
-.service h3 {
-  color: var(--green);
-  margin-bottom: 10px;
-}
-
-/* CONTACT */
+/* ---------------- CONTACT ---------------- */
 .contact-box {
-  background: white;
+  background: #fff;
   padding: 40px;
   border-radius: 16px;
   max-width: 600px;
@@ -188,72 +210,84 @@ section h2 {
   text-align: center;
 }
 
-.contact-box p {
-  margin-bottom: 15px;
-}
+.contact-box p { margin-bottom: 12px; }
 
-.contact-box a {
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* MAP */
+/* ---------------- MAP ---------------- */
 .map {
-  margin-top: 40px;
-  border-radius: 16px;
+  margin-top: 25px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* FOOTER */
+/* ---------------- FOOTER ---------------- */
 footer {
   background: var(--navy);
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 25px;
-  margin-top: 60px;
-  font-size: 0.9rem;
 }
 
-/* WHATSAPP */
-.whatsapp {
+/* ---------------- ANIMATIONS ---------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  nav { flex-direction: column; gap: 10px; }
+  .nav-links a { margin: 0 10px; }
+}
+
+  /* WHATSAPP FLOATING BUTTON */
+.whatsapp-float {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: white;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  color: #fff;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 28px;
   text-decoration: none;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  z-index: 999;
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
 </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "name": "Priyadarshi Sharma & Company",
-  "url": "https://pdsharma.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
-  }
-}
-</script>
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav>
-  <img src="logo.png" alt="PSCo Logo">
-  <div>
+<nav class="navbar">
+  <div class="logo-wrap">
+    <img src="logo.png" alt="PSCo Logo">
+    <span>Priyadarshi Sharma & Company</span>
+  </div>
+  <div class="nav-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
@@ -262,76 +296,100 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Priyadarshi Sharma & Company</h1>
-  <p>Chartered Accountants & Tax Advisors</p>
-  <a href="#contact" class="cta">Get in Touch</a>
+  <div class="hero-overlay">
+    <h1>Priyadarshi Sharma & Company</h1>
+    <p>Chartered Accountants & Tax Advisors</p>
+    <a href="#contact" class="cta">Get in Touch</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="fade-in">
   <h2>About Us</h2>
   <p class="about-text">
-    Priyadarshi Sharma & Company is a professional Chartered Accountancy firm
-    delivering taxation, audit, accounting, GST, and compliance services with
-    integrity, precision, and client focus.
+    Professional Chartered Accountancy firm providing taxation, audit,
+    accounting, GST, and compliance services.
   </p>
 
-  <div class="about-cards">
-    <div class="about-card">✔ Trusted tax & compliance advisory</div>
-    <div class="about-card">✔ Ethical & transparent practices</div>
-    <div class="about-card">✔ Services for individuals & businesses</div>
+  <div class="about-grid">
+    <div class="about-card">
+      <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818">
+      <div class="about-overlay">
+        <h3>Trusted Advisors</h3>
+        <p>Reliable tax and compliance guidance.</p>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+      <div class="about-overlay">
+        <h3>Professional Ethics</h3>
+        <p>Integrity and confidentiality.</p>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40">
+      <div class="about-overlay">
+        <h3>Business Compliance</h3>
+        <p>GST, audit & ROC services.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services">
+<section id="services" class="fade-in">
   <h2>Our Services</h2>
   <div class="services">
     <div class="service"><h3>Income Tax</h3><p>Returns & planning</p></div>
-    <div class="service"><h3>GST Services</h3><p>Registration & filing</p></div>
+    <div class="service"><h3>GST</h3><p>Registration & filing</p></div>
     <div class="service"><h3>Accounting</h3><p>Bookkeeping & MIS</p></div>
-    <div class="service"><h3>Audit</h3><p>Statutory & internal audits</p></div>
-    <div class="service"><h3>ROC Compliance</h3><p>Company filings</p></div>
+    <div class="service"><h3>Audit</h3><p>Statutory & internal</p></div>
+    <div class="service"><h3>ROC</h3><p>Company compliance</p></div>
     <div class="service"><h3>Advisory</h3><p>Business consulting</p></div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="fade-in">
   <h2>Contact Details</h2>
   <div class="contact-box">
     <p><strong>Priyadarshi Sharma & Company</strong></p>
-    <p>9-Modern Market, Bikaner, Rajasthan</p>
-    <p>Email: <a href="mailto:info@pdsharma.com">ca.sharma1987@gmail.com</a></p>
-    <p>Mobile: <a href="tel:+919462200704">+91 9462200704</a></p>
+    <p>9 Modern Market, Bikaner, Rajasthan, India</p>
+    <p>Email: ca.sharma1984@gmail.com</p>
+    <p>Mobile: +91 9462200704</p>
 
-    <!-- GOOGLE MAP -->
     <div class="map">
       <iframe
         src="https://www.google.com/maps?q=9%20Modern%20Market,%20Bikaner,%20Rajasthan,%20India&output=embed"
-        width="100%"
-        height="300"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy">
+        width="100%" height="280" style="border:0;" loading="lazy">
       </iframe>
     </div>
-
   </div>
 </section>
 
 <footer>
-  © <span id="year"></span> Priyadarshi Sharma & Company. All Rights Reserved.
+  © <span id="year"></span> Priyadarshi Sharma & Company
 </footer>
-
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" 
-   href="https://wa.me/919462200704" 
-   target="_blank">💬</a>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
+/* Scroll animations */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+});
+document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+</script>
+<a
+  href="https://wa.me/919462200704"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp">
+  💬
+</a>
 </body>
 </html>
