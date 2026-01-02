@@ -2,161 +2,329 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Priyadarshi Sharma & Company | Chartered Accountants</title>
 
-  <meta name="description" content="Priyadarshi Sharma & Company - Chartered Accountants providing taxation, accounting, audit, GST, and compliance services.">
-  <meta name="keywords" content="CA Firm, Tax Consultant, Accounting Services, GST, Audit, Priyadarshi Sharma">
-  <meta name="author" content="Priyadarshi Sharma & Company">
+  <meta name="description" content="Priyadarshi Sharma & Company - Chartered Accountants providing Tax, GST, Audit, Accounting and Compliance services.">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --primary: #0b3c5d;
+      --accent: #1abc9c;
+      --light: #f5f7fa;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f6f8;
+      background: var(--light);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
       color: #333;
-      line-height: 1.6;
+      font-weight: 500;
     }
 
-    header {
-      background: #0b3c5d;
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(11,60,93,0.9), rgba(11,60,93,0.9)),
+        url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a");
+      background-size: cover;
+      background-position: center;
       color: #fff;
-      padding: 40px 20px;
       text-align: center;
+      padding: 110px 20px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      opacity: 0.9;
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
     }
 
-    .container {
-      max-width: 1100px;
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #17a589;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
       margin: auto;
-      padding: 40px 20px;
     }
 
-    .section {
+    section h2 {
+      text-align: center;
+      color: var(--primary);
       margin-bottom: 40px;
+      font-size: 2.2rem;
     }
 
-    .section h2 {
-      color: #0b3c5d;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+    /* ABOUT */
+    .about-text {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 50px;
     }
 
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .about-card {
+      position: relative;
+      height: 260px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .about-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .about-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .about-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11,60,93,0.85);
+      color: #fff;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
 
-    .card {
+    .service {
       background: #fff;
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #0b3c5d;
+    .service:hover {
+      transform: translateY(-8px);
+    }
+
+    .service h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .contact-box form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-box button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      cursor: pointer;
     }
 
     footer {
-      background: #0b3c5d;
+      background: var(--primary);
       color: #fff;
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      margin-top: 60px;
     }
 
-    .contact p {
-      margin: 8px 0;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 15px 18px;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
   </style>
 </head>
+
 <body>
 
-<header>
+<nav>
+  <h2>PS & Co.</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
   <h1>Priyadarshi Sharma & Company</h1>
-  <p>Chartered Accountants | Tax & Compliance Advisors</p>
-</header>
+  <p>Chartered Accountants & Tax Advisors</p>
+  <a href="#contact" class="btn">Get Consultation</a>
+</section>
 
-<div class="container">
+<section id="about">
+  <h2>About Us</h2>
+  <p class="about-text">
+    <strong>Priyadarshi Sharma & Company</strong> is a professional Chartered
+    Accountancy firm offering taxation, audit, accounting, GST, and compliance
+    services with integrity, accuracy, and a client-first approach.
+  </p>
 
-  <section class="section">
-    <h2>About Us</h2>
-    <p>
-      Priyadarshi Sharma & Company is a professional Chartered Accountancy firm
-      providing reliable and result-oriented services in taxation, accounting,
-      audit, and regulatory compliance. We are committed to delivering accurate,
-      timely, and practical solutions to individuals, startups, and businesses.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Income Tax</h3>
-        <p>Income tax return filing, tax planning, assessments, and advisory services.</p>
-      </div>
-
-      <div class="card">
-        <h3>GST Services</h3>
-        <p>GST registration, returns, reconciliation, audits, and compliance support.</p>
-      </div>
-
-      <div class="card">
-        <h3>Accounting & Bookkeeping</h3>
-        <p>End-to-end accounting services, bookkeeping, and MIS reporting.</p>
-      </div>
-
-      <div class="card">
-        <h3>Audit & Assurance</h3>
-        <p>Statutory audit, tax audit, internal audit, and assurance services.</p>
-      </div>
-
-      <div class="card">
-        <h3>Company Compliance</h3>
-        <p>ROC filings, company incorporation, annual compliance, and advisory.</p>
-      </div>
-
-      <div class="card">
-        <h3>Advisory Services</h3>
-        <p>Business advisory, financial planning, and regulatory guidance.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818">
+      <div class="about-overlay">
+        <h3>Trusted Tax Advisors</h3>
+        <p>Income tax planning, filing, assessments & advisory.</p>
       </div>
     </div>
-  </section>
 
-  <section class="section contact">
-    <h2>Contact Us</h2>
-    <p><strong>Firm:</strong> Priyadarshi Sharma & Company</p>
-    <p><strong>Email:</strong> ca.sharma1937@gmail.com</p>
-    <p><strong>Phone:</strong> +91-9462200704</p>
-    <p><strong>Location:</strong> 9-Modern Market, Bikaner - Rajasthan (334001)</p>
-  </section>
+    <div class="about-card">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+      <div class="about-overlay">
+        <h3>Professional Excellence</h3>
+        <p>High ethical standards & confidential client service.</p>
+      </div>
+    </div>
 
-</div>
+    <div class="about-card">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40">
+      <div class="about-overlay">
+        <h3>Business Compliance</h3>
+        <p>GST, ROC filings, audit & corporate advisory.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service"><h3>Income Tax</h3><p>Returns & tax planning</p></div>
+    <div class="service"><h3>GST Services</h3><p>Registration & compliance</p></div>
+    <div class="service"><h3>Accounting</h3><p>Bookkeeping & MIS</p></div>
+    <div class="service"><h3>Audit</h3><p>Statutory & internal audits</p></div>
+    <div class="service"><h3>ROC Compliance</h3><p>Company filings</p></div>
+    <div class="service"><h3>Advisory</h3><p>Business consulting</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Details</h2>
+
+  <div class="contact-box" style="text-align:center;">
+    <p><strong>Firm Name:</strong><br>
+      Priyadarshi Sharma & Company
+    </p>
+
+    <p><strong>Address:</strong><br>
+      <!-- Update this with your exact address -->
+      9-Modern Market,<br>
+      Bikaner, Rajasthan, India
+    </p>
+
+    <p><strong>Email:</strong><br>
+      <a href="mailto:info@pdsharma.com">ca.sharma1987@gmail.com</a>
+    </p>
+
+    <p><strong>Mobile:</strong><br>
+      <a href="tel:+919462200704">+91 9462200704</a>
+    </p>
+  </div>
+</section>
+
 
 <footer>
   © <span id="year"></span> Priyadarshi Sharma & Company. All Rights Reserved.
 </footer>
+
+<a class="whatsapp" href="https://wa.me/919462200704" target="_blank">💬</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
